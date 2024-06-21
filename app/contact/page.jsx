@@ -66,14 +66,8 @@ const Contact = () => {
               onClick: () => console.log("SUCCESS!"),
               }
            });
-           // Reset the form
-          setFormData({
-            firstName: '',
-            lastName: '',
-            email: '',
-            phone: '',
-            message: ''
-          });
+           
+          form.current.reset();
           // You can add code here to show a success message to the user
         },
         (error) => {
