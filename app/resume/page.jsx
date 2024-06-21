@@ -186,7 +186,7 @@ const skills = {
       name: "tailwind.css",
     },
     {
-      icon: <img src="/pinecone.svg" alt="Pinecone DB" className="h-[110px] w-[110px] hover:content-[url('/pinecone-red.svg')]"/>,
+      icon: <Image src="/pinecone.svg" alt="Pinecone DB" className="h-[110px] w-[110px] hover:content-[url('/pinecone-red.svg')]"/>,
       name: "Pinecone DB",
     },
     {
@@ -215,6 +215,7 @@ import {
 
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Resume = () => {
   return (
