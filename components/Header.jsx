@@ -11,7 +11,7 @@ const Header = () => {
     <header className="py-8 xl:py-12 text-white">
       <div className="container mx-auto flex justify-between items-center">
         {/* logo */}
-        <Link href="http://localhost:3000/">
+        <Link href="https://rahulg.info/">
          <Image 
               src="/fleux-logo.png"
               width={48}
