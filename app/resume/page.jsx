@@ -1,53 +1,51 @@
 "use client";
 
 import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
   FaReact,
-  FaFigma,
-  FaNodeJs,
+  FaJava,
+  FaPause,
 } from "react-icons/fa";
 
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import React from "react";
+import { SiTailwindcss, SiNextdotjs, SiVercel, SiTypescript, SiOpenai, SiAnthropic, SiPerplexity, SiDocker, SiAmazonaws, SiPytorch, SiJupyter, SiPython, SiExpress, SiPuppeteer } from "react-icons/si";
 
 // about data
 const about = {
   title: "About me",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "I design and implement robust end-to-end solutions using modern AI SDKs and full-stack technologies.",
   info: [
     {
       fieldName: "Name",
-      fieldValue: "Luke Coleman",
+      fieldValue: "Rahul Gupta",
     },
     {
       fieldName: "Phone",
-      fieldValue: "(+40) 321 654 678",
+      fieldValue: "(+1) 619 764 8386",
     },
     {
-      fieldName: "Experience",
-      fieldValue: "12+ Years",
+      fieldName: "Location",
+      fieldValue: "San Diego, CA"
     },
     {
-      fieldName: "Skype",
-      fieldValue: "luke.01",
+      fieldName: "LinkedIn",
+      fieldValue: "rahul2608",
     },
     {
-      fieldName: "Nationality",
-      fieldValue: "American",
+      fieldName: "Status",
+      fieldValue: "OPT-(Aug,2027)",
     },
     {
       fieldName: "Email",
-      fieldValue: "luke.01@gmail.com",
+      fieldValue: "rahul.gupta2608@yahoo.com",
     },
     {
-      fieldName: "Freelance",
-      fieldValue: "Available",
+      fieldName: "Relocate",
+      fieldValue: "Yes",
     },
     {
       fieldName: "Languages",
-      fieldValue: "English, Spanish",
+      fieldValue: "English",
     },
   ],
 };
@@ -57,38 +55,54 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    `I use my expertise in AI development and full-stack engineering to develop 
+    platforms that facilitate natural, user-friendly interactions between humans 
+    and AI.`,
   items: [
     {
-      company: "Tech Solutions Inc.",
-      position: "Full Stack Developer",
-      duration: "2022 - Present",
+      company: "Fleuxlabs.ai",
+      position: "Founder",
+      duration: "August 2022 - Present",
+      location: "San Diego, CA, USA",
+      kpi: [
+        { one: "Developed a live, state-of-the-art multi-LLM chat platform with shared context, integrating GPT-4/Vo, Claude Opus, and Perplexity, using a vectorized Pinecone database and Cohere embeddings for seamless user experiences.", 
+          two: "Includes 5 attachments per message and TTS backed by Elevenlabs.", 
+          three: "Actively working on Puppeeteer based Dockerized agentic control systems with multi-llm access running on proxies in a controlled access space.", }        
+      ]    
     },
     {
-      company: "Web Design Studio",
-      position: "Front-End Developer Intern",
-      duration: "Summer 2021",
+      company: "Stratas",
+      position: "Co-Founder",
+      duration: "Jan 2023 - Jan 2024",
+      location: "San Diego, CA, USA",
+      kpi: [
+        { one: "Built a React Native application with speed sensors and Bluetooth connectivity.", 
+          two: "Developed a Raspberry Pi prototype with a 4K camera for ride monitoring.", 
+          three: "Made a data-driven decision to halt further development due to scaling challenges and universal chip shortages.", }
+      ]    
     },
     {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
-      duration: "2020 - 2021",
+      company: "Walmart Global Tech",
+      position: "Software Development Engineer II",
+      duration: "June 2021 - August 2022",
+      location: "Vancouver, BC, Canada ", 
+      kpi: [
+        { one: "Dockerized WalmartUS iOS and Android mobile release pipeline, collaborating with NX founder, Victor Savkin to create a custom monorepo.", 
+          two: "Implemented dependency caching and dependency graphs, reducing average build times by 47%.", 
+          three: "Subsequent builds after initial failure were 78% faster, down to 12 minutes from 54 minutes, enhancing developer commit velocity.",}
+        ]    
     },
     {
-      company: "Tech Academy",
-      position: "Teaching Assistant",
-      duration: "2019 - 2020",
+      company: "@WalmartLabs",
+      position: "Software Developmenet Engineer In Test",
+      duration: "June 2019 - May 2021",
+      location: "Sunyvale, CA, USA",
+      kpi: [ { one: "Developed a React.js tool that automated the entire order lifecycle using mock APIs, enabling same-day testing and deployment across US, UK, and India.", 
+        two: "Eliminated production hot-fixes, significantly reducing risk and improving software quality.", 
+        three: "Saved 200+ hours of US resources and facilitated the US testing department's transition to India due to the tool's reliability and minimal maintenance requirements.", }, 
+      ]
     },
-    {
-      company: "Digital Agency",
-      position: "UI/UX Designer",
-      duration: "2018 - 2019",
-    },
-    {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2017 - 2018",
-    },
+    
   ],
 };
 
@@ -97,38 +111,23 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "My education",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "Masters in Computer Science from San Diego State University, focusing on deep learning and AI applications. Coursework included speech recognition, intelligent systems, agentic control systems, and large language modeling.",
   items: [
     {
-      institution: "Online Course Platform",
-      degree: "Full Stack Web Development Bootcamp",
-      duration: "2023",
+      institution: "San Diego State University",
+      degree: "MS in Computer Science",
+      duration: "2022 - 2024",
     },
     {
-      institution: "Codecademy",
-      degree: "Front-end Track",
-      duration: "2022",
+      institution: "Oracle",
+      degree: "Java Cerified Professional",
+      duration: "2019 - Present",
     },
     {
-      institution: "Online Course",
-      degree: "Programming Course",
-      duration: "2020 - 2021",
-    },
-    {
-      institution: "Tech Institute",
-      degree: "Certified Web Developer",
-      duration: "2019",
-    },
-    {
-      institution: "Design School",
-      degree: "Diploma in Graphic Design",
-      duration: "2016 - 2018",
-    },
-    {
-      institution: "Community College",
-      degree: "Associate Degree in Computer Science",
-      duration: "2014 - 2016",
-    },
+      institution: "San Diego State University",
+      degree: "BS in Computer Science",
+      duration: "2014 - 2018",
+    }
   ],
 };
 
@@ -136,19 +135,43 @@ const education = {
 const skills = {
   title: "My skills",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "Core technologies I'm experienced with",
   skillList: [
     {
-      icon: <FaHtml5 />,
-      name: "html 5",
+      icon: <SiPytorch />,
+      name: "PyTorch",
     },
     {
-      icon: <FaCss3 />,
-      name: "css 3",
+      icon: <SiJupyter />,
+      name: "Jupyter Notebooks",
     },
     {
-      icon: <FaJs />,
-      name: "javascript",
+      icon: <SiPython />,
+      name: "Python",
+    },
+    {
+      icon: <SiOpenai />,
+      name: "OpenAI",
+    },
+    {
+      icon: <SiAnthropic />,
+      name: "Anthropic",
+    },
+    {
+      icon: <SiDocker />,
+      name: "Docker",
+    },
+    {
+      icon: <SiAmazonaws/>, 
+      name: "AWS",
+    },
+    {
+      icon: <SiTypescript />,
+      name: "TypeScript",
+    },
+    {
+      icon: <SiVercel />,
+      name: "Vercel",
     },
     {
       icon: <FaReact />,
@@ -163,13 +186,21 @@ const skills = {
       name: "tailwind.css",
     },
     {
-      icon: <FaNodeJs />,
-      name: "node.js",
+      icon: <img src="/pinecone.svg" alt="Pinecone DB" className="h-[110px] w-[110px] hover:content-[url('/pinecone-red.svg')]"/>,
+      name: "Pinecone DB",
     },
     {
-      icon: <FaFigma />,
-      name: "figma",
+      icon:<FaJava />,
+      name: "Java",
     },
+    {
+      icon: <FaPause />,
+      name: "Elevenlabs",
+    },
+    {
+      icon: <SiPuppeteer />,
+      name: "Puppeteer",
+    }
   ],
 };
 
@@ -188,17 +219,17 @@ import { motion } from "framer-motion";
 const Resume = () => {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0.8 }}
       animate={{
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0 text-white"
     >
       <div className="container mx-auto">
         <Tabs
           defaultValue="experience"
-          className="flex flex-col xl:flex-row gap-[60px]"
+          className="flex flex-col xl:flex-row gap-[60px] text-white/80"
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="experience">Experience</TabsTrigger>
@@ -216,24 +247,60 @@ const Resume = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
-                <ScrollArea className="h-[400px]">
+                <ScrollArea className="h-[500px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                     {experience.items.map((item, index) => {
+                      const experienceId = `experience-${index}`;
+                      const kpiId = `kpi-${index}`;
                       return (
+                        <React.Fragment key={`item-${index}`}>
                         <li
-                          key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          key={experienceId}
+                          className="bg-[#232329] h-[360px] py-6 px-10 rounded-xl flex flex-col items-center justify-start lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                          <h3 className="text-md max-w-[260px] min-h-[60px] text-center lg:text-left">
                             {item.position}
                           </h3>
+                          <div className="flex items-center gap-3 mt-2">
+                            {/* dot */}
+                            <span className="w-[6px] h-[6px] mb-2 rounded-full bg-accent"></span>
+                            <p className="text-white">{item.company}</p>
+                          </div>
                           <div className="flex items-center gap-3">
                             {/* dot */}
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.company}</p>
+                            <p className="text-whit3/80">{item.location}</p>
                           </div>
                         </li>
+                        <li
+                        key={kpiId}
+                        className="bg-[#232329] h-[360px] py-6 px-10 rounded-xl flex flex-col items-start gap-1"
+                      >
+                        <span className="text-green-400">KPIS</span>
+                          {item.kpi.map((kpi, index) => {
+                            return (
+                              <div key={`${kpiId}-${index}`} className="flex flex-col text-white/60 text-xs">
+                                <div className="flex items-center gap-3 my-3">
+                                  {/* dot */}
+                                  <span className="w-[6px] h-[6px] rounded-full bg-green-400"></span>
+                                   <p className="w-full">{kpi.one}</p>
+                                </div>
+                                <div className="flex items-center gap-2 my-3">
+                                  {/* dot */}
+                                  <span className="w-[6px] h-[6px] rounded-full bg-green-400"></span>
+                                   <p className="w-full">{kpi.two}</p>
+                                </div>
+                                <div className="flex items-center gap-3 my-3">
+                                  {/* dot */}
+                                  <span className="w-[6px] h-[6px] rounded-full bg-green-400"></span>
+                                   <p className="w-full">{kpi.three}</p>
+                                </div>
+                              </div>
+                            );
+                          })}
+                      </li>
+                      </React.Fragment>
                       );
                     })}
                   </ul>
@@ -256,7 +323,7 @@ const Resume = () => {
                           key={index}
                           className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
-                          <span className="text-accent">{item.duration}</span>
+                          <span className="text-green-400">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
                             {item.degree}
                           </h3>

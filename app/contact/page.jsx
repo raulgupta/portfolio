@@ -3,40 +3,94 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { toast } from "sonner"
 
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaMapPin } from "react-icons/fa";
 
 const info = [
   {
     icon: <FaPhoneAlt />,
     title: "Phone",
-    description: "(+40) 321 654 876",
+    description: "(+1) 619 764 8386",
   },
   {
     icon: <FaEnvelope />,
     title: "Email",
-    description: "youremail@gmail.com",
+    description: "notrahulgupta@gmail.com",
   },
   {
-    icon: <FaMapMarkerAlt />,
-    title: "Address",
-    description: "Code Corner, Tech Town 13579",
+    icon: <FaMapPin />,
+    title: "Location",
+    description: "San Diego, CA",
   },
 ];
 
 import { motion } from "framer-motion";
 
 const Contact = () => {
+
+  const form = useRef();
+
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+   
+    emailjs
+      .sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, form.current, {
+        publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+      })
+      .then(
+        () => {
+          toast("Message Sent", {
+            description: `Response time 2-4 hours.`,
+            action: {
+              label: "OK",
+              onClick: () => console.log("SUCCESS!"),
+              }
+           });
+           // Reset the form
+          setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            message: ''
+          });
+          // You can add code here to show a success message to the user
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          toast("Message Failed", {
+            description: `Please try again.`,
+            action: {
+              label: "OK",
+              onClick: () => console.log("TRY AGAIN!"),
+              }
+           });
+          // You can add code here to show an error message to the user
+        },
+      );
+  };
+
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -50,40 +104,50 @@ const Contact = () => {
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:w-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
-              <h3 className="text-4xl text-accent">Let's work together</h3>
+            <form ref={form} onSubmit={handleSubmit} className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+              <h3 className="text-4xl text-accent">Send me a message</h3>
               <p className="text-white/60">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum
-                nihil sapiente pariatur id totam.
+                For collaborations & special access requests.
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="Firstname" />
-                <Input type="lastname" placeholder="Lastname" />
-                <Input type="email" placeholder="Email address" />
-                <Input type="phone" placeholder="Phone number" />
+              <Input 
+                  type="text" 
+                  name="firstName" 
+                  placeholder="Firstname" 
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                />
+                <Input 
+                  type="text" 
+                  name="lastName" 
+                  placeholder="Lastname" 
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                />
+                <Input 
+                  type="email" 
+                  name="email" 
+                  placeholder="Email address" 
+                  value={formData.email}
+                  onChange={handleInputChange}
+                />
+                <Input 
+                  type="tel" 
+                  name="phone" 
+                  placeholder="Phone number" 
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                />
               </div>
-              {/* select */}
-              <Select>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="est">Web Development</SelectItem>
-                    <SelectItem value="cst">UI/UX Design</SelectItem>
-                    <SelectItem value="mst">Logo Design</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-              {/* textarea */}
               <Textarea
+                name="message"
                 className="h-[200px]"
                 placeholder="Type your message here."
+                value={formData.message}
+                onChange={handleInputChange}
               />
-              {/* btn */}
-              <Button size="md" className="max-w-40">
+              <Button type="submit" size="md" className="max-w-40">
                 Send message
               </Button>
             </form>

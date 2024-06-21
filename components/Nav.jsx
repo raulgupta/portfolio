@@ -9,8 +9,8 @@ const links = [
     path: "/",
   },
   {
-    name: "services",
-    path: "/services",
+    name: "Showcase",
+    path: "/showcase",
   },
   {
     name: "resume",
@@ -19,11 +19,7 @@ const links = [
   {
     name: "work",
     path: "/work",
-  },
-  {
-    name: "contact",
-    path: "/contact",
-  },
+  }
 ];
 
 const Nav = () => {
