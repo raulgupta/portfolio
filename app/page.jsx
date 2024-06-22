@@ -44,7 +44,7 @@ const Home = () => {
                 size="md"
                 className="uppercase text-base flex items-center gap-2 text-white hover:bg-accent-hover hover:border-transparent"
               >
-                <span>Live Project</span>
+                <span>Live Desktop App</span>
                 <Laptop className="text-base" />
               </Button>
               </a>
