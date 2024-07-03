@@ -186,7 +186,7 @@ const skills = {
       name: "tailwind.css",
     },
     {
-      icon: <Image src="/pinecone.svg" alt="Pinecone DB" className="h-[110px] w-[110px] hover:content-[url('/pinecone-red.svg')]"/>,
+      icon: <Image src="/pinecone.svg" alt="Pinecone DB" width={110} height={110} className="h-[110px] w-[110px] hover:content-[url('/pinecone-red.svg')]"/>,
       name: "Pinecone DB",
     },
     {

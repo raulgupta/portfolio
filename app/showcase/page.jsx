@@ -36,7 +36,7 @@ const projects = [
     category: "Foundry",
     title: "Live Access",
     description:
-      "Streamable UI with theming and multi chat support. Optimized for Desktop Usage.",
+      "Streamable UI with theming and multi chat support. Optimized for Desktop/Mobile Usage.",
     stack: [{ name: "Vercel" }, { name: "Tailwind" }, { name: "React.js" }],
     image: "/assets/work/thumb2.png",
     live: "https://fleuxlabs.ai/login",
